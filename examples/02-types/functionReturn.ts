@@ -6,4 +6,9 @@ const printResult = (num: number) => {
   console.log("Result: " + num);
 };
 
+const printResultReturn = (num: number): undefined => {
+  console.log("Result: " + num);
+  return;
+};
+
 printResult(addFn(5, 14));
