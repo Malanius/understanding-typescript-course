@@ -1,5 +1,5 @@
 enum Role {
-  ADMIN = 5, //5
+  ADMIN ='ADMIN', //'ADMIN'
   AUTHOR = 100, //100
   READ_ONLY = 200, //200
 }
