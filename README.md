@@ -173,3 +173,15 @@ const person: {
 ```
 
 ` `
+
+### Arrays
+
+- fixed type arrays can be defined as `${type}[]`
+
+```typescript
+const arr: string[];
+```
+
+- flexible array can be defines as `any[]`, but you loose type checking
+
+` `
