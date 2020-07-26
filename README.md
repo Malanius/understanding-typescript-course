@@ -326,3 +326,27 @@ const addAndHandle = (n1: number, n2: number, cb: (num: number) => void) => {
   cb(result);
 };
 ```
+
+` `
+
+### The "unknown" type
+
+- useful in cases we don't exactly know what will be stored in variable
+- more restrictive than any
+- prevents assigning unknown variables to typed ones without type-check
+- way better choice than any when input is not known before
+
+```typescript
+let userInput: unknown;
+let userName: string;
+
+userInput = 5;
+userInput = "String";
+
+// userName = userInput; // won't work as unknown can't be assigned to string
+//TS detects this check and allows assigment of the unknown type to string
+
+if (typeof userInput === "string") {
+  userName === userInput;
+}
+```
