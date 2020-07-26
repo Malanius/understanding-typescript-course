@@ -46,7 +46,11 @@ console.log(add("1", 2));
 - types and type-checking
 - type-errors are discovered during compilation rather than runtime
 - great IDE support that promts errors even before compilation
+- next-gen JS features compiled for older versions
+- adds non-JS features like Interfaces and Generics
+- adds meta-programming features like Decorators
 - early adoption of new ECMASCript features
+- rich configuration options
 
 ` `
 
@@ -58,7 +62,7 @@ console.log(add("1", 2));
 
 ---
 
-## Basics
+## Getting started
 
 ` `
 
