@@ -114,12 +114,11 @@ tsc ${file.name}
 
 ### Core types, TS specific
 
-<<<<<<< Updated upstream
-| Type      | Descritption                                            | Example           |
-| --------- | ------------------------------------------------------- | ----------------- |
-| `Tuple`   | Fixed lenght and type array                             | `[1,2]`           |
-| `Enum`    | Enumerated list of values                               | `enum{NEW,OLD}`   |
-| `Any`     | Any type possible, disables type checking               | `*`               |
+| Type    | Descritption                              | Example         |
+| ------- | ----------------------------------------- | --------------- |
+| `Tuple` | Fixed lenght and type array               | `[1,2]`         |
+| `Enum`  | Enumerated list of values                 | `enum{NEW,OLD}` |
+| `Any`   | Any type possible, disables type checking | `*`             |
 
 ` `
 
@@ -139,9 +138,9 @@ tsc ${file.name}
 // Variables
 const number1: number = 1;
 // Function parameters
-const f1 = (par1: number, par2: string) => {}
+const f1 = (par1: number, par2: string) => {};
 // Function return value
-const f2 = (n1, n2): nubmer => {}
+const f2 = (n1, n2): nubmer => {};
 ```
 
 ` `
@@ -152,8 +151,8 @@ const f2 = (n1, n2): nubmer => {}
 - it's considered bad practice to specify type that can be infered
 
 ```typescript
-let num1 = 1 //num
-let someString = 'abc' //string
+let num1 = 1; //num
+let someString = "abc"; //string
 ```
 
 ` `
@@ -185,3 +184,53 @@ const arr: string[];
 - flexible array can be defines as `any[]`, but you loose type checking
 
 ` `
+
+### Tuples
+
+- tuple in TS is fixed lenght, fixed type array
+- can be defined as:
+
+```typescript
+const t: [nubmer, string] = [1, "string"];
+```
+
+- TS check assigment to tuple array to have correct type
+- it is still possible to push to tuple array
+
+` `
+
+### Enums
+
+- works simmilar as you know from other languages
+- definition:
+
+```typescript
+enum {
+    NEW, //0
+    OLD //100
+}
+```
+
+` `
+
+- it is possible to define custom ordenals
+
+```typescript
+enum {
+    NEW = 5, //5
+    OLD //6
+}
+```
+
+` `
+
+- it is also possible to use different type than nubmers for ordenals
+
+```typescript
+enum {
+    NEW = 'NEW', //NEW
+    OLD
+}
+```
+
+- be careful with this, always have a good reason to do it
