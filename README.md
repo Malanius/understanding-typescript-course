@@ -11,8 +11,8 @@ Strongly typed Javascript.
 ### What is Typescript
 
 - JavaScript superset
-- Build up on JS and adds new features to it
-- can't be executed directly by JS environment (browser, node)
+- Build upon JS and adds new features to it
+- can't be executed directly by the JS environment (browser, node)
 - is compiled to pure JS
 - TS features are compiled to JS "workarounds"
 - add types and type checking to the JS
@@ -33,9 +33,9 @@ console.log(add("1", 2));
 
 ` `
 
-- console will log `12`
+- the console will log `12`
 - will not throw runtime error
-- but might be logical error
+- but might be a logical error
 - possible mitigation: validate & sanitize user input
 - wouldn't it be better to discover this during development?
 
@@ -45,16 +45,16 @@ console.log(add("1", 2));
 
 - types and type-checking
 - type-errors are discovered during compilation rather than runtime
-- great IDE support that promts errors even before compilation
+- great IDE support that prompts errors even before compilation
 - next-gen JS features compiled for older versions
 
 ` `
 
 - adds non-JS features like Interfaces and Generics
 - adds meta-programming features like Decorators
-- early adoption of new ECMASCript features
+- early adoption of new ECMAScript features
 - rich configuration options
-- great support in 3rd party libs (eiter they are written in TS types for it are available)
+- great support in 3rd party libs (either they are written in TS types for it are available)
 
 ` `
 
@@ -73,7 +73,7 @@ console.log(add("1", 2));
 ### Installing TS
 
 - requires node.js to be installed
-- install TS compiler with following command
+- install TS compiler with the following command
 
 ```bash
 npm install -g typescript
@@ -91,7 +91,7 @@ tsc ${file.name}
 
 ---
 
-## Basic typing
+## Basic types
 
 ` `
 
@@ -122,11 +122,15 @@ tsc ${file.name}
 
 ` `
 
-| Type    | Descritption                              | Example         |
-| ------- | ----------------------------------------- | --------------- |
-| `Tuple` | Fixed lenght and type array               | `[1,2]`         |
-| `Enum`  | Enumerated list of values                 | `enum{NEW,OLD}` |
-| `Any`   | Any type possible, disables type checking | `*`             |
+| Type       | Description                                                             |
+| ---------- | ----------------------------------------------------------------------- |
+| `Function` | Pointer to function                                                     |
+| `unknown`  | When the incoming type is not known                                     |
+| `never`    | For functions that don't return (interrupted by error or infinite loop) |
+
+---
+
+## Using types
 
 ` `
 
@@ -148,10 +152,10 @@ const f2 = (n1, n2): nubmer => {};
 ### Type inference
 
 - TS can infer the type from the context
-- it's considered bad practice to specify type that can be infered
+- it's considered bad practice to specify a type that can be inferred
 
 ```typescript
-let num1 = 1; //num
+let num1 = 1; //number
 let someString = "abc"; //string
 ```
 
@@ -176,44 +180,43 @@ const person: {
 ### Arrays
 
 - fixed type arrays can be defined as `${type}[]`
+- a flexible array can be defined as `any[]`, but you lose type checking
 
 ```typescript
 const arr: string[];
 ```
 
-- flexible array can be defines as `any[]`, but you loose type checking
-
 ` `
 
 ### Tuples
 
-- tuple in TS is fixed lenght, fixed type array
+- tuple in TS is fixed length, fixed type array
+
+- TS check assignment to tuple array to have the correct type
+- it is still possible to push to tuple array
 - can be defined as:
 
 ```typescript
 const t: [nubmer, string] = [1, "string"];
 ```
 
-- TS check assigment to tuple array to have correct type
-- it is still possible to push to tuple array
-
 ` `
 
 ### Enums
 
-- works simmilar as you know from other languages
+- works similar as you know from other languages
 - definition:
 
 ```typescript
 enum {
     NEW, //0
-    OLD //100
+    OLD //1
 }
 ```
 
 ` `
 
-- it is possible to define custom ordenals
+- it is possible to define custom ordinals
 
 ```typescript
 enum {
@@ -224,7 +227,7 @@ enum {
 
 ` `
 
-- it is also possible to use different type than nubmers for ordenals
+- it is also possible to use a different type than numbers for ordinals
 
 ```typescript
 enum {
@@ -241,7 +244,7 @@ enum {
 
 - disables type checking
 - behaves as plain JS does
-- avoid whenever possible (why use TS when you have everythign any?)
+- avoid whenever possible (why use TS when you have everything any?)
 - possible to configure compilation to mark use of any as error
 
 ---
@@ -257,7 +260,7 @@ enum {
 - example:
 
 ```typescript
-const combine = (input1: number | string, input2: number | string) => { ...}
+const combine = (input1: number | string, input2: number | string) => {};
 ```
 
 ` `
@@ -269,7 +272,7 @@ const combine = (input1: number | string, input2: number | s
 
 ```typescript
 const combine = (
-  resultConversion: "as-number" | "as-text//;
+  resultConversion: "as-number" | "as-text";
 ) => {}
 ```
 
@@ -278,8 +281,8 @@ const combine = (
 ### Type aliases/custom types
 
 - it can be cumbersome to always repeat union types or other complex types
-- type aliases allows to define custom types that can be used later
-- possible to define alias for type with `type` keyword
+- type aliases allow defining custom types that can be used later
+- possible to define an alias for type with `type` keyword
 
 ```typescript
 type Combinable = number | string;
@@ -295,8 +298,10 @@ const someone: Person = {...}
 
 ### Function return type & void
 
-- each function has a return type, mostly it's infered by TS
-- possible to defien return type manually with specifing return types after parameters:
+- each function has a return type, mostly it's inferred by TS
+- possible to define return type manually with specifying return types after parameters:
+- a function that doesn't return value has a `void` return type (in pure JS `undefined` is returned with `return` statement)
+- `undefined` is a valid type in TS, will require `return` in the function
 
 ```typescript
 const add = (n1: number, n2: number): number => {
@@ -304,14 +309,11 @@ const add = (n1: number, n2: number): number => {
 };
 ```
 
-- function that doesn't return value has a `void` return type (in pure JS `undefined` is returned with `return` statement)
-- `undefined` is valid type in TS, will require `return` in the function
-
 ` `
 
 ### Function type
 
-- used to specify that some variable should hold a function poiter
+- used to specify that some variable should hold a function pointer
 - function types can be declared as well
 
 ```typescript
@@ -331,10 +333,12 @@ const addAndHandle = (n1: number, n2: number, cb: (num: number) => void) => {
 
 ### The "unknown" type
 
-- useful in cases we don't exactly know what will be stored in variable
+- useful in cases we don't exactly know what will be stored in the variable
 - more restrictive than any
 - prevents assigning unknown variables to typed ones without type-check
 - way better choice than any when input is not known before
+
+` `
 
 ```typescript
 let userInput: unknown;
@@ -343,8 +347,8 @@ let userName: string;
 userInput = 5;
 userInput = "String";
 
-// userName = userInput; // won't work as unknown can't be assigned to string
-//TS detects this check and allows assigment of the unknown type to string
+// userName = userInput; // won't work as unknown can't be assigned to string
+//TS detects this check and allows assignment of the unknown type to string
 
 if (typeof userInput === "string") {
   userName === userInput;
@@ -355,8 +359,8 @@ if (typeof userInput === "string") {
 
 ### Never type
 
-- specifies that function doesn't never return anything, even default undefined
-- useful when function always throws error or has an infinite loop
+- specifies that function doesn't return anything, even default undefined
+- useful when function always throws an error or has an infinite loop
 
 ```typescript
 const generateError = (message: string, code: number): never => {
