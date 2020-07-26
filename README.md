@@ -91,7 +91,7 @@ tsc ${file.name}
 
 ---
 
-## Basics
+## Basic typing
 
 ` `
 
