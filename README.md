@@ -234,3 +234,28 @@ enum {
 ```
 
 - be careful with this, always have a good reason to do it
+
+` `
+
+### The "any" type
+
+- disables type checking
+- behaves as plain JS does
+- avoid whenever possible (why use TS when you have everythign any?)
+- possible to configure compilation to mark use of any as error
+
+---
+
+## More on typing
+
+` `
+
+### Union types
+
+- sometimes, you need to support multiple types in variable, this can be done with union types
+- defined as `${type} | ${type}...`
+- example:
+
+```typescript
+const combine = (input1: number | string, input2: number | string) => { ...}
+```
