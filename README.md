@@ -105,20 +105,29 @@ tsc ${file.name}
 
 ` `
 
-| Type      | Descritption                                            | Example           |
-| --------- | ------------------------------------------------------- | ----------------- |
-| `object`  | Any JS object, more specific types can be defined       | `{age: 30}`       |
-| `Array`   | Any JS array, element types can be strict or flexible   | `[1,2,3] `        |
+| Type     | Descritption                                          | Example     |
+| -------- | ----------------------------------------------------- | ----------- |
+| `object` | Any JS object, more specific types can be defined     | `{age: 30}` |
+| `Array`  | Any JS array, element types can be strict or flexible | `[1,2,3]`   |
 
 ` `
 
 ### Core types, TS specific
 
+<<<<<<< Updated upstream
 | Type      | Descritption                                            | Example           |
 | --------- | ------------------------------------------------------- | ----------------- |
 | `Tuple`   | Fixed lenght and type array                             | `[1,2]`           |
 | `Enum`    | Enumerated list of values                               | `enum{NEW,OLD}`   |
 | `Any`     | Any type possible, disables type checking               | `*`               |
+
+` `
+
+| Type    | Descritption                              | Example         |
+| ------- | ----------------------------------------- | --------------- |
+| `Tuple` | Fixed lenght and type array               | `[1,2]`         |
+| `Enum`  | Enumerated list of values                 | `enum{NEW,OLD}` |
+| `Any`   | Any type possible, disables type checking | `*`             |
 
 ` `
 
@@ -146,3 +155,21 @@ const f2 = (n1, n2): nubmer => {}
 let num1 = 1 //num
 let someString = 'abc' //string
 ```
+
+` `
+
+### Specific object types
+
+- it is possible to specify object type with keys and type of their value:
+
+```typescript
+const person: {
+  name: string;
+  age: number;
+} = {
+  name: "Malanius",
+  age: 30,
+};
+```
+
+` `
