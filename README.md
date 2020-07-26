@@ -367,3 +367,58 @@ const generateError = (message: string, code: number): never => {
   throw { message: message, errorCode: code };
 };
 ```
+
+---
+
+## TS compiler & configuration
+
+---
+
+## TS & next-gen JS
+
+---
+
+## Classes
+
+---
+
+## Interfaces
+
+---
+
+## Advanced types
+
+---
+
+## Generics
+
+---
+
+## Decorators
+
+---
+
+## Modules & namespaces
+
+---
+
+## TS & webpack
+
+---
+
+## TS & 3rd party libs
+
+---
+
+## TS & React
+
+---
+
+## TS & node.js w/ Express
+
+---
+
+## Useful resources
+
+- [TypeScript documentation](https://www.typescriptlang.org/docs/home)
+- [Understaning TypeScript by Maximilian Schwarzmüller](https://www.udemy.com/course/understanding-typescript/)
