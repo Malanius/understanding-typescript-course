@@ -84,3 +84,34 @@ npm install -g typescript
 ```bash
 tsc ${file.name}
 ```
+
+---
+
+## Basics
+
+` `
+
+### Core types, also known to JS
+
+| Type      | Descritption                                            | Example           |
+| --------- | ------------------------------------------------------- | ----------------- |
+| `number`  | all numbers, no disctintion between integers and floats | `10`, `5.3`       |
+| `string`  | all text values                                         | 'Hi, "Hi", \`Hi\` |
+| `boolean` | just true/false, no "truthy/falsy" JS nonsense          | `true/false`      |
+
+` `
+
+| Type      | Descritption                                            | Example           |
+| --------- | ------------------------------------------------------- | ----------------- |
+| `object`  | Any JS object, more specific types can be defined       | `{age: 30}`       |
+| `Array`   | Any JS array, element types can be strict or flexible   | `[1,2,3] `        |
+
+` `
+
+### Core types, TS specific
+
+| Type      | Descritption                                            | Example           |
+| --------- | ------------------------------------------------------- | ----------------- |
+| `Tuple`   | Fixed lenght and type array                             | `[1,2]`           |
+| `Enum`    | Enumerated list of values                               | `enum{NEW,OLD}`   |
+| `Any`     | Any type possible, disables type checking               | `*`               |
