@@ -350,3 +350,16 @@ if (typeof userInput === "string") {
   userName === userInput;
 }
 ```
+
+` `
+
+### Never type
+
+- specifies that function doesn't never return anything, even default undefined
+- useful when function always throws error or has an infinite loop
+
+```typescript
+const generateError = (message: string, code: number): never => {
+  throw { message: message, errorCode: code };
+};
+```
