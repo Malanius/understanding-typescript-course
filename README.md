@@ -47,10 +47,14 @@ console.log(add("1", 2));
 - type-errors are discovered during compilation rather than runtime
 - great IDE support that promts errors even before compilation
 - next-gen JS features compiled for older versions
+
+` `
+
 - adds non-JS features like Interfaces and Generics
 - adds meta-programming features like Decorators
 - early adoption of new ECMASCript features
 - rich configuration options
+- great support in 3rd party libs (eiter they are written in TS types for it are available)
 
 ` `
 
@@ -115,3 +119,30 @@ tsc ${file.name}
 | `Tuple`   | Fixed lenght and type array                             | `[1,2]`           |
 | `Enum`    | Enumerated list of values                               | `enum{NEW,OLD}`   |
 | `Any`     | Any type possible, disables type checking               | `*`               |
+
+` `
+
+### Type assigment
+
+- to assign type use the `: ${type}` syntax
+
+```typescript
+// Variables
+const number1: number = 1;
+// Function parameters
+const f1 = (par1: number, par2: string) => {}
+// Function return value
+const f2 = (n1, n2): nubmer => {}
+```
+
+` `
+
+### Type inference
+
+- TS can infer the type from the context
+- it's considered bad practice to specify type that can be infered
+
+```typescript
+let num1 = 1 //num
+let someString = 'abc' //string
+```
