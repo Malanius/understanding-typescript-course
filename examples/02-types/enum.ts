@@ -1,7 +1,7 @@
 enum Role {
   ADMIN = 5, //5
-  AUTHOR, //6
-  READ_ONLY, //7
+  AUTHOR = 100, //100
+  READ_ONLY = 200, //200
 }
 
 const enumPerson: {
