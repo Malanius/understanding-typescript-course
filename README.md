@@ -28,7 +28,7 @@ function add(num1, num2) {
   return num1 + num2;
 }
 
-console.log(add('1', 2));
+console.log(add("1", 2));
 ```
 
 ` `
@@ -59,3 +59,24 @@ console.log(add('1', 2));
 ---
 
 ## Basics
+
+` `
+
+### Installing TS
+
+- requires node.js to be installed
+- install TS compiler with following command
+
+```bash
+npm install -g typescript
+```
+
+` `
+
+### Basic compilation
+
+- to compile single file run following command
+
+```bash
+tsc ${file.name}
+```
