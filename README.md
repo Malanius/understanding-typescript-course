@@ -259,3 +259,16 @@ enum {
 ```typescript
 const combine = (input1: number | string, input2: number | string) => { ...}
 ```
+
+` `
+
+### Literal types
+
+- it is possible to add specific value instead of type
+- can be combined with union types to allow several values
+
+```typescript
+const combine = (
+  resultConversion: "as-number" | "as-text//;
+) => {}
+```
