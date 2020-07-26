@@ -5,5 +5,6 @@ const betterPerson = {
 };
 
 let favoriteActivities: string [];
+favoriteActivities = 'String';
 
 console.log(betterPerson.hobbies);
