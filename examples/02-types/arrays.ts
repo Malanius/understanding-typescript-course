@@ -4,7 +4,12 @@ const betterPerson = {
   hobbies: ["programming", "moutain biking"],
 };
 
-let favoriteActivities: any[];
-favoriteActivities = ["String", 1];
+let favoriteActivities: string[];
+favoriteActivities = ["String"];
 
 console.log(betterPerson.hobbies);
+
+for (const hobby of betterPerson.hobbies) {
+  console.log(hobby.toUpperCase());
+  //console.log(hobby.map()); // ERROR: console.log(hobby.toUpperCase());
+}
