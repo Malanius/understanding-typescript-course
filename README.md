@@ -6,7 +6,7 @@ Strongly typed Javascript.
 
 ## Introduction
 
-` `
+`-`
 
 ### What is Typescript
 
@@ -17,7 +17,7 @@ Strongly typed Javascript.
 - TS features are compiled to JS "workarounds"
 - add types and type checking to the JS
 
-` `
+`-`
 
 ### Why typescript
 
@@ -31,7 +31,7 @@ function add(num1, num2) {
 console.log(add("1", 2));
 ```
 
-` `
+`-`
 
 - the console will log `12`
 - will not throw runtime error
@@ -39,7 +39,7 @@ console.log(add("1", 2));
 - possible mitigation: validate & sanitize user input
 - wouldn't it be better to discover this during development?
 
-` `
+`-`
 
 ### Advantages
 
@@ -48,7 +48,7 @@ console.log(add("1", 2));
 - great IDE support that prompts errors even before compilation
 - next-gen JS features compiled for older versions
 
-` `
+`-`
 
 - adds non-JS features like Interfaces and Generics
 - adds meta-programming features like Decorators
@@ -56,7 +56,7 @@ console.log(add("1", 2));
 - rich configuration options
 - great support in 3rd party libs (either they are written in TS types for it are available)
 
-` `
+`-`
 
 ### Drawbacks
 
@@ -68,7 +68,7 @@ console.log(add("1", 2));
 
 ## Getting started
 
-` `
+`-`
 
 ### Installing TS
 
@@ -79,7 +79,7 @@ console.log(add("1", 2));
 npm install -g typescript
 ```
 
-` `
+`-`
 
 ### Basic compilation
 
@@ -93,7 +93,7 @@ tsc ${file.name}
 
 ## Basic types
 
-` `
+`-`
 
 ### Core types, also known to JS
 
@@ -103,14 +103,14 @@ tsc ${file.name}
 | `string`  | all text values                                         | 'Hi, "Hi", \`Hi\` |
 | `boolean` | just true/false, no "truthy/falsy" JS nonsense          | `true/false`      |
 
-` `
+`-`
 
 | Type     | Descritption                                          | Example     |
 | -------- | ----------------------------------------------------- | ----------- |
 | `object` | Any JS object, more specific types can be defined     | `{age: 30}` |
 | `Array`  | Any JS array, element types can be strict or flexible | `[1,2,3]`   |
 
-` `
+`-`
 
 ### Core types, TS specific
 
@@ -120,7 +120,7 @@ tsc ${file.name}
 | `Enum`  | Enumerated list of values                 | `enum{NEW,OLD}` |
 | `Any`   | Any type possible, disables type checking | `*`             |
 
-` `
+`-`
 
 | Type       | Description                                                             |
 | ---------- | ----------------------------------------------------------------------- |
@@ -132,7 +132,7 @@ tsc ${file.name}
 
 ## Using types
 
-` `
+`-`
 
 ### Type assigment
 
@@ -147,7 +147,7 @@ const f1 = (par1: number, par2: string) => {};
 const f2 = (n1, n2): nubmer => {};
 ```
 
-` `
+`-`
 
 ### Type inference
 
@@ -159,7 +159,7 @@ let num1 = 1; //number
 let someString = "abc"; //string
 ```
 
-` `
+`-`
 
 ### Specific object types
 
@@ -175,7 +175,7 @@ const person: {
 };
 ```
 
-` `
+`-`
 
 ### Arrays
 
@@ -186,7 +186,7 @@ const person: {
 const arr: string[];
 ```
 
-` `
+`-`
 
 ### Tuples
 
@@ -200,7 +200,7 @@ const arr: string[];
 const t: [nubmer, string] = [1, "string"];
 ```
 
-` `
+`-`
 
 ### Enums
 
@@ -214,7 +214,7 @@ enum {
 }
 ```
 
-` `
+`-`
 
 - it is possible to define custom ordinals
 
@@ -225,7 +225,7 @@ enum {
 }
 ```
 
-` `
+`-`
 
 - it is also possible to use a different type than numbers for ordinals
 
@@ -238,7 +238,7 @@ enum {
 
 - be careful with this, always have a good reason to do it
 
-` `
+`-`
 
 ### The "any" type
 
@@ -251,7 +251,7 @@ enum {
 
 ## More on typing
 
-` `
+`-`
 
 ### Union types
 
@@ -263,7 +263,7 @@ enum {
 const combine = (input1: number | string, input2: number | string) => {};
 ```
 
-` `
+`-`
 
 ### Literal types
 
@@ -276,7 +276,7 @@ const combine = (
 ) => {}
 ```
 
-` `
+`-`
 
 ### Type aliases/custom types
 
@@ -294,7 +294,7 @@ const value: Combinable = 1;
 const someone: Person = {...}
 ```
 
-` `
+`-`
 
 ### Function return type & void
 
@@ -309,7 +309,7 @@ const add = (n1: number, n2: number): number => {
 };
 ```
 
-` `
+`-`
 
 ### Function type
 
@@ -329,7 +329,7 @@ const addAndHandle = (n1: number, n2: number, cb: (num: number) => void) => {
 };
 ```
 
-` `
+`-`
 
 ### The "unknown" type
 
@@ -338,7 +338,7 @@ const addAndHandle = (n1: number, n2: number, cb: (num: number) => void) => {
 - prevents assigning unknown variables to typed ones without type-check
 - way better choice than any when input is not known before
 
-` `
+`-`
 
 ```typescript
 let userInput: unknown;
@@ -355,7 +355,7 @@ if (typeof userInput === "string") {
 }
 ```
 
-` `
+`-`
 
 ### Never type
 
