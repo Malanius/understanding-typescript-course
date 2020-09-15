@@ -83,10 +83,19 @@ npm install -g typescript
 
 ### Basic compilation
 
-- to compile single file run following command
+- to compile single file once
 
 ```bash
 tsc ${file.name}
+```
+
+- to compile single file each time it changes
+
+```bash
+# short
+tsc -w ${file.name}
+# long
+tsc --watch ${file.name}
 ```
 
 ---
