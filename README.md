@@ -440,6 +440,11 @@ when building a lib to be used by others, you can include type definitions with 
 - `rootDir` - where the root of the source files is, typically `src`
 - `outDir` - where the compiled output should go, i.e. `dist`
 
+`-`
+
+- `noEmit` - will not produce JS files, but still checks the TS files
+- `noEmitOnError` - will not produce compiled JS files when errors are present
+
 ---
 
 ## TS & next-gen JS
