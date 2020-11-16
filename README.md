@@ -402,6 +402,13 @@ const generateError = (message: string, code: number): never => {
   - supports wildcard globbing
 - `files` - you can specify concere files to compile, no paths or globbing here
 
+`-`
+
+### Compiler options
+
+- `target` - which version of JS the TS code should be compiled into
+- 
+
 ---
 
 ## TS & next-gen JS
