@@ -407,7 +407,10 @@ const generateError = (message: string, code: number): never => {
 ### Compiler options
 
 - `target` - which version of JS the TS code should be compiled into
-- 
+- `module` - specifies how modules are generated (will be dealt with in own section)
+- `lib`
+  - specify which default objects and features TS knows
+  - defaults to target `es` and all `DOM` APIs for web browser
 
 ---
 
