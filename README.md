@@ -400,6 +400,9 @@ const generateError = (message: string, code: number): never => {
   - files to be included/excluded
   - folder to be included/exluded
   - supports wildcard globbing
+
+`-`
+
 - `files` - you can specify concere files to compile, no paths or globbing here
 
 `-`
@@ -411,6 +414,23 @@ const generateError = (message: string, code: number): never => {
 - `lib`
   - specify which default objects and features TS knows
   - defaults to target `es` and all `DOM` APIs for web browser
+
+`-`
+
+- `allowJS` - allows JS files to be compiled by TS
+- `checkJS` - checks JS files for errors, but won't compile
+- `jsx` - specifies how to compile JSX for React
+
+`-`
+
+when building a lib to be used by others, you can include type definitions with it:
+
+- `declaration` - creates `.d.ts` files
+- `declarationMap` - generates source maps for `.d.ts` files
+
+`-`
+
+- `sourceMap` - generates source map for debugging purposes
 
 ---
 
