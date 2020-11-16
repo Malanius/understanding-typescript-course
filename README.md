@@ -400,6 +400,7 @@ const generateError = (message: string, code: number): never => {
   - files to be included/excluded
   - folder to be included/exluded
   - supports wildcard globbing
+- `files` - you can specify concere files to compile, no paths or globbing here
 
 ---
 

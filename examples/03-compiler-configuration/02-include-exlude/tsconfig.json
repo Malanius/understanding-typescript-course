@@ -72,8 +72,13 @@
     "**/*.dev.ts", // wildcard example
     "node_modules" // this is ignored by default
   ],
-  "include": [
-    // only paths mentioned here will be compiled
+  // "include": [
+  //   // only paths mentioned here will be compiled
+  //   "app.ts",
+  //   "analytiscs.ts"
+  // ],
+  "files": [
+    // only files (no paths) mentioned here will be compiled
     "app.ts",
     "analytiscs.ts"
   ]
