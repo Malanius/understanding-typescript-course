@@ -387,6 +387,19 @@ const generateError = (message: string, code: number): never => {
 
 - initialize TS project with `tsc --init`
 - this creates `tsconfig.json` file containing TS compilator configuration
+- now you can use `tsc` or `tsc --watch` to compile whole project
+
+`-`
+
+### Including & Excluding files
+
+- in `tsconfig.json` you can specify files to be included or exluded in the compilation
+- `exlude` - paths in this list won't be compiled
+- `include` - only paths specified here will be compiled, can be filtered with exclude
+- `exclude` or `include` parameters in the configuration files takes a list of
+  - files to be included/excluded
+  - folder to be included/exluded
+  - supports wildcard globbing
 
 ---
 
