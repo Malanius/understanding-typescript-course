@@ -1,3 +1,3 @@
-const sendAnalytics = (data) => {
+const sendAnalytics = (data: string) => {
   console.log(data);
 };
