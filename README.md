@@ -432,6 +432,14 @@ when building a lib to be used by others, you can include type definitions with 
 
 - `sourceMap` - generates source map for debugging purposes
 
+`-`
+
+- `outFile`
+  - concatenate and emit output to single file
+  - tricky to use properly, see [here](https://basarat.gitbook.io/typescript/main-1/outfile)
+- `rootDir` - where the root of the source files is, typically `src`
+- `outDir` - where the compiled output should go, i.e. `dist`
+
 ---
 
 ## TS & next-gen JS
