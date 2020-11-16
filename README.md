@@ -253,8 +253,8 @@ enum {
 
 - disables type checking
 - behaves as plain JS does
-- avoid whenever possible (why use TS when you have everything any?)
-- possible to configure compilation to mark use of any as error
+- avoid whenever possible (why use TS when you have everything `any`?)
+- possible to configure compilation to mark use of `any` as error
 
 ---
 
@@ -343,9 +343,9 @@ const addAndHandle = (n1: number, n2: number, cb: (num: number) => void) => {
 ### The "unknown" type
 
 - useful in cases we don't exactly know what will be stored in the variable
-- more restrictive than any
+- more restrictive than `any`
 - prevents assigning unknown variables to typed ones without type-check
-- way better choice than any when input is not known before
+- way better choice than `any` when input is not known before
 
 `-`
 
@@ -357,8 +357,8 @@ userInput = 5;
 userInput = "String";
 
 // userName = userInput; // won't work as unknown can't be assigned to string
-//TS detects this check and allows assignment of the unknown type to string
 
+//TS detects this check and allows assignment of the unknown type to string
 if (typeof userInput === "string") {
   userName === userInput;
 }
@@ -380,6 +380,13 @@ const generateError = (message: string, code: number): never => {
 ---
 
 ## TS compiler & configuration
+
+`-`
+
+### Watch/Compile whole project
+
+- initialize TS project with `tsc --init`
+- this creates `tsconfig.json` file containing TS compilator configuration
 
 ---
 
