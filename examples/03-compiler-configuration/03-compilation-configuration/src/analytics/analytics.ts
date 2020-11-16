@@ -1,1 +1,3 @@
-console.log("Sending analytics data...");
+const sendAnalytics = (data) => {
+  console.log(data);
+};

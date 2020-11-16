@@ -445,6 +445,11 @@ when building a lib to be used by others, you can include type definitions with 
 - `noEmit` - will not produce JS files, but still checks the TS files
 - `noEmitOnError` - will not produce compiled JS files when errors are present
 
+`-`
+
+- `strict` - sets all strict options on/off
+- `noImplicitAny` - raise error when implicit `any` is present (the type is not specified)
+
 ---
 
 ## TS & next-gen JS
