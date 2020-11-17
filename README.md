@@ -457,6 +457,14 @@ when building a lib to be used by others, you can include type definitions with 
 
 - `strictFunctionTypes` - cheks for function types while inheriting
 - `strictBindCallApply` - strict check bind, call, apply functions assigments
+- `strictPropertyInitialization` - Ensure non-undefined class properties are initialized in the constructor
+
+`-`
+
+- `noImplicitThis` - `this` impliead as `any` will cause error
+- `alwaysStrict` - generated JS files will always have "strict mode" (`"use strict"`)
+
+`-`
 
 ---
 
