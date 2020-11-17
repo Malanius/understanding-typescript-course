@@ -499,6 +499,13 @@ when building a lib to be used by others, you can include type definitions with 
 - for the shorhand of one param fucntions, it is required to have type of the function and its params specified
 - compiled to function varibales on target < ES6
 
+`-`
+
+### Default function parameters
+
+- default arguments has to be last on the list of arguments
+- compiled to workaroud that cheks for assigned value on target < ES6
+
 ---
 
 ## Classes
