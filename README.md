@@ -466,6 +466,13 @@ when building a lib to be used by others, you can include type definitions with 
 
 `-`
 
+### Additional checks
+
+- `noUnusedLocals` - reports unused local variables
+- `noUnusedParameters` - reports unused function parameters
+- `noImplicitReturns` - check if all code paths in function returns a value
+- `noFallthroughCasesInSwitch` - checks missing `break` statements in `switch`
+
 ---
 
 ## TS & next-gen JS
