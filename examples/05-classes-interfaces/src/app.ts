@@ -1,10 +1,15 @@
 class Department {
   //   private id: string;
   //   private name: string;
+  static fiscalYear = 2020;
   protected employees: string[] = [];
 
   // Shorthand init
   constructor(private readonly id: string, private name: string) {}
+
+  static createEmployee(name: string) {
+    return { name: name };
+  }
 
   //this is dummy parameter for TS
   describe(this: Department) {
@@ -85,7 +90,7 @@ it.printEmployees();
 // accountingCopy.describe(); // compilation error as not an instance of Department
 
 const accounting = new AccountingDepartment("d2", []);
-accounting.latestReport = 'EOY report';
+accounting.latestReport = "EOY report";
 accounting.addReport("Something went wrong...");
 console.log(accounting.latestReport);
 accounting.printReports();
@@ -93,3 +98,7 @@ accounting.printReports();
 accounting.addEmployee("Malanius");
 accounting.addEmployee("Lindal");
 accounting.printEmployees();
+
+const employee1 = Department.createEmployee("Rula");
+console.log(employee1);
+console.log(Department.fiscalYear);
