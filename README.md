@@ -534,6 +534,11 @@ when building a lib to be used by others, you can include type definitions with 
 
 ## Classes
 
+`-`
+
+- TS provides `private`, `protected` and `public` (default) access modifiers & checks during compilation (in JS, all is always public)
+- TS allows shorthand syntax for constructor initialization - fields can be specified just in constructor and are created and initialzied automatically
+
 ---
 
 ## Interfaces
