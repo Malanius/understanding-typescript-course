@@ -513,6 +513,15 @@ when building a lib to be used by others, you can include type definitions with 
 - useful for pulling values from arrays or copying objects
 - compiled to workarounds on target < ES6
 
+`-`
+
+### Rest parameters
+
+- useful for crating functions with variable number of parameters
+- provided parameters are covnerted to array
+- can be combined with tuples if number of arguments is known before
+- compiled to workaround that collects the parameters to the array on target < ES6
+
 ---
 
 ## Classes

@@ -1,16 +1,16 @@
 // let & const
 
-const constValue = "something";
+// const constValue = "something";
 // constValue = 'impossible';
 
 let letValue;
 letValue = "something";
 
 // Var is global or function scope only!
-var age = 24;
-if (age > 20) {
-  var oldYet = true;
-}
+// var age = 24;
+// if (age > 20) {
+//   var oldYet = true;
+// }
 
 // console.log(oldYet); //works in JS!
 
@@ -23,17 +23,17 @@ if (age > 20) {
 // console.log(old); // old is not defined
 
 // Arrow functions
-const add = (a: number, b: number = 1) => a + b;
+// const add = (a: number, b: number = 1) => a + b;
 
-const printOutput: (a: number | string) => void = (output) =>
-  console.log(output);
+// const printOutput: (a: number | string) => void = (output) =>
+//   console.log(output);
 
-const button = document.querySelector("button");
-if (button) {
-  button.addEventListener("click", (event) => console.log(event));
-}
+// const button = document.querySelector("button");
+// if (button) {
+//   button.addEventListener("click", (event) => console.log(event));
+// }
 
-printOutput(add(5));
+// printOutput(add(5));
 
 const hobbies = ["Music", "Games"];
 const activeHobbies = ["Mountain biking", ...hobbies];
@@ -49,3 +49,11 @@ const person = {
 
 // const copiedPerson = person; //not real copy, just reference
 const copiedPerson = { ...person };
+
+const add = (...numbers: number[]) => {
+  numbers.reduce((currentResult, currentValue) => {
+    return currentResult + currentValue;
+  }, 0);
+};
+const addedNumbers = add(1, 2, 3, 5, 8, 13.0);
+console.log(addedNumbers);
