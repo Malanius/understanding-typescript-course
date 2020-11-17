@@ -34,3 +34,18 @@ if (button) {
 }
 
 printOutput(add(5));
+
+const hobbies = ["Music", "Games"];
+const activeHobbies = ["Mountain biking", ...hobbies];
+
+// activeHobbies.push(hobbies); //would push the array as new element of array
+// activeHobbies.push(hobbies[0], hobbies[1]); //cumbersome
+// activeHobbies.push(...hobbies); //spread operator pulls out all elements
+
+const person = {
+  name: "Larien",
+  age: 25,
+};
+
+// const copiedPerson = person; //not real copy, just reference
+const copiedPerson = { ...person };

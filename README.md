@@ -506,6 +506,13 @@ when building a lib to be used by others, you can include type definitions with 
 - default arguments has to be last on the list of arguments
 - compiled to workaroud that cheks for assigned value on target < ES6
 
+`-`
+
+### Spread operator
+
+- useful for pulling values from arrays or copying objects
+- compiled to workarounds on target < ES6
+
 ---
 
 ## Classes
