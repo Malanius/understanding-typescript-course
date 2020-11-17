@@ -1,20 +1,18 @@
-class Department {
+abstract class Department {
   //   private id: string;
   //   private name: string;
   static fiscalYear = 2020;
   protected employees: string[] = [];
 
   // Shorthand init
-  constructor(private readonly id: string, private name: string) {}
+  constructor(protected readonly id: string, private name: string) {}
 
   static createEmployee(name: string) {
     return { name: name };
   }
 
   //this is dummy parameter for TS
-  describe(this: Department) {
-    console.log(`Department (${this.id}): ${this.name}`);
-  }
+  abstract describe(this: Department): void;
 
   addEmployee(employee: string) {
     // this.id = "d2"; // doesn't work with readonly
@@ -32,6 +30,10 @@ class ITDepartment extends Department {
   constructor(id: string, admins: string[]) {
     super(id, "IT"); //has to be called first
     this.admins = admins;
+  }
+
+  describe(): void {
+    console.log("IT Department - ID: " + this.id);
   }
 }
 
@@ -71,6 +73,10 @@ class AccountingDepartment extends Department {
 
   printReports() {
     console.log(this.reports);
+  }
+
+  describe(): void {
+    console.log("Accounting Department - latest report: " + this.lastReport);
   }
 }
 
