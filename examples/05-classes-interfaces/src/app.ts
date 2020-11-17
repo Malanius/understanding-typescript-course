@@ -22,13 +22,35 @@ class Department {
   }
 }
 
-const accounting = new Department("d1", "Accounting");
+class ITDepartment extends Department {
+  admins: string[];
+  constructor(id: string, admins: string[]) {
+    super(id, "IT"); //has to be called first
+    this.admins = admins;
+  }
+}
 
-accounting.addEmployee("Larien");
-accounting.addEmployee("Naerlien");
+class AccountingDepartment extends Department {
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accounting");
+  }
 
-accounting.describe();
-accounting.printEmployees();
+  addReport(text: string) {
+    this.reports.push(text);
+  }
+
+  printReports() {
+    console.log(this.reports);
+  }
+}
+
+const it = new ITDepartment("it1", ["Malanius"]);
+
+it.addEmployee("Larien");
+it.addEmployee("Naerlien");
+
+it.describe();
+it.printEmployees();
 
 // possible as by default all is public
 // impossible when employees are private
@@ -36,3 +58,7 @@ accounting.printEmployees();
 
 // const accountingCopy = { describe: accounting.describe };
 // accountingCopy.describe(); // compilation error as not an instance of Department
+
+const accounting = new AccountingDepartment("d2", []);
+accounting.addReport("Somerhing went wrong...");
+accounting.printReports();
