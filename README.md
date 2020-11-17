@@ -522,6 +522,14 @@ when building a lib to be used by others, you can include type definitions with 
 - can be combined with tuples if number of arguments is known before
 - compiled to workaround that collects the parameters to the array on target < ES6
 
+`-`
+
+### Array & object destructuring
+
+- useful shorthand for pullign specific values from arrays or objects to varibales
+- doesn't change original value/object
+- compiled to workarounds using old approach on target < ES6
+
 ---
 
 ## Classes

@@ -3,8 +3,8 @@
 // const constValue = "something";
 // constValue = 'impossible';
 
-let letValue;
-letValue = "something";
+// let letValue;
+// letValue = "something";
 
 // Var is global or function scope only!
 // var age = 24;
@@ -43,7 +43,7 @@ const activeHobbies = ["Mountain biking", ...hobbies];
 // activeHobbies.push(...hobbies); //spread operator pulls out all elements
 
 const person = {
-  name: "Larien",
+  firstName: "Larien",
   age: 25,
 };
 
@@ -57,3 +57,9 @@ const add = (...numbers: number[]) => {
 };
 const addedNumbers = add(1, 2, 3, 5, 8, 13.0);
 console.log(addedNumbers);
+
+// const hobby1 = hobbies[0];
+// const hobby2 = hobbies[1];
+const [hobby1, hobby2, ...remaining] = hobbies;
+
+const { firstName: userName, age } = person;
