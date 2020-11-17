@@ -4,7 +4,7 @@ class Department {
   private employees: string[] = [];
 
   // Shorthand init
-  constructor(private id: string, private name: string) {}
+  constructor(private readonly id: string, private name: string) {}
 
   //this is dummy parameter for TS
   describe(this: Department) {
@@ -12,6 +12,7 @@ class Department {
   }
 
   addEmployee(employee: string) {
+    // this.id = "d2"; // doesn't work with readonly
     this.employees.push(employee);
   }
 

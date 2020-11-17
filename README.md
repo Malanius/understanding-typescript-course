@@ -537,6 +537,7 @@ when building a lib to be used by others, you can include type definitions with 
 `-`
 
 - TS provides `private`, `protected` and `public` (default) access modifiers & checks during compilation (in JS, all is always public)
+- TS also provides `readonly` modifiers - specifies that the value is not modifiable asfter assigment
 - TS allows shorthand syntax for constructor initialization - fields can be specified just in constructor and are created and initialzied automatically
 - class methods can have `this` parameter to check if called from the instance object
 
