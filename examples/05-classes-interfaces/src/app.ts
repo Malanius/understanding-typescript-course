@@ -38,6 +38,7 @@ class ITDepartment extends Department {
 }
 
 class AccountingDepartment extends Department {
+  private static instance: AccountingDepartment;
   private lastReport: string;
 
   get latestReport() {
@@ -54,9 +55,16 @@ class AccountingDepartment extends Department {
     this.addReport(value);
   }
 
-  constructor(id: string, private reports: string[]) {
+  private constructor(id: string, private reports: string[]) {
     super(id, "Accounting");
     this.lastReport = reports[0];
+  }
+
+  static getInstance() {
+    if (!this.instance) {
+      this.instance = new AccountingDepartment("d2", []);
+    }
+    return this.instance;
   }
 
   addEmployee(name: string) {
@@ -95,7 +103,7 @@ it.printEmployees();
 // const accountingCopy = { describe: accounting.describe };
 // accountingCopy.describe(); // compilation error as not an instance of Department
 
-const accounting = new AccountingDepartment("d2", []);
+const accounting = AccountingDepartment.getInstance();
 accounting.latestReport = "EOY report";
 accounting.addReport("Something went wrong...");
 console.log(accounting.latestReport);
