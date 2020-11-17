@@ -447,8 +447,16 @@ when building a lib to be used by others, you can include type definitions with 
 
 `-`
 
+### Strict checks
+
 - `strict` - sets all strict options on/off
 - `noImplicitAny` - raise error when implicit `any` is present (the type is not specified)
+- `strictNullChecks` - requires checks for null for potentially nullable values
+
+`-`
+
+- `strictFunctionTypes` - cheks for function types while inheriting
+- `strictBindCallApply` - strict check bind, call, apply functions assigments
 
 ---
 
