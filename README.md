@@ -475,7 +475,24 @@ when building a lib to be used by others, you can include type definitions with 
 
 ---
 
-## TS & next-gen JS
+## TS & next-gen JS (ES6+)
+
+`-`
+
+### ES6 Compability chart
+
+[here](https://kangax.github.io/compat-table/es6/)
+
+`-`
+
+### `let` and `const`
+
+- `const` - constant value, can't be changed
+- `let` - variable value, changeable
+- difference between them and old `var` is in how the're scoped - `var` has only function or global scope, no local/block scope for it exists
+- compiled to `var` on target < ES6
+
+`-`
 
 ---
 
