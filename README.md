@@ -494,6 +494,11 @@ when building a lib to be used by others, you can include type definitions with 
 
 `-`
 
+### Arrow functions
+
+- for the shorhand of one param fucntions, it is required to have type of the function and its params specified
+- compiled to function varibales on target < ES6
+
 ---
 
 ## Classes
