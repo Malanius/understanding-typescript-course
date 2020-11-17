@@ -475,7 +475,60 @@ when building a lib to be used by others, you can include type definitions with 
 
 ---
 
-## TS & next-gen JS
+## TS & next-gen JS (ES6+)
+
+`-`
+
+### ES6 Compability chart
+
+[here](https://kangax.github.io/compat-table/es6/)
+
+`-`
+
+### `let` and `const`
+
+- `const` - constant value, can't be changed
+- `let` - variable value, changeable
+- difference between them and old `var` is in how the're scoped - `var` has only function or global scope, no local/block scope for it exists
+- compiled to `var` on target < ES6
+
+`-`
+
+### Arrow functions
+
+- for the shorhand of one param fucntions, it is required to have type of the function and its params specified
+- compiled to function varibales on target < ES6
+
+`-`
+
+### Default function parameters
+
+- default arguments has to be last on the list of arguments
+- compiled to workaroud that cheks for assigned value on target < ES6
+
+`-`
+
+### Spread operator
+
+- useful for pulling values from arrays or copying objects
+- compiled to workarounds on target < ES6
+
+`-`
+
+### Rest parameters
+
+- useful for crating functions with variable number of parameters
+- provided parameters are covnerted to array
+- can be combined with tuples if number of arguments is known before
+- compiled to workaround that collects the parameters to the array on target < ES6
+
+`-`
+
+### Array & object destructuring
+
+- useful shorthand for pullign specific values from arrays or objects to varibales
+- doesn't change original value/object
+- compiled to workarounds using old approach on target < ES6
 
 ---
 
