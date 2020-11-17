@@ -5,5 +5,5 @@ const clickHandler = (message: string) => {
 };
 
 if (button) {
-  button.addEventListener("click", clickHandler.bind(null));
+  button.addEventListener("click", clickHandler.bind(null, 'Heya!'));
 }
