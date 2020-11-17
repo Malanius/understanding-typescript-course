@@ -253,8 +253,8 @@ enum {
 
 - disables type checking
 - behaves as plain JS does
-- avoid whenever possible (why use TS when you have everything any?)
-- possible to configure compilation to mark use of any as error
+- avoid whenever possible (why use TS when you have everything `any`?)
+- possible to configure compilation to mark use of `any` as error
 
 ---
 
@@ -343,9 +343,9 @@ const addAndHandle = (n1: number, n2: number, cb: (num: number) => void) => {
 ### The "unknown" type
 
 - useful in cases we don't exactly know what will be stored in the variable
-- more restrictive than any
+- more restrictive than `any`
 - prevents assigning unknown variables to typed ones without type-check
-- way better choice than any when input is not known before
+- way better choice than `any` when input is not known before
 
 `-`
 
@@ -357,8 +357,8 @@ userInput = 5;
 userInput = "String";
 
 // userName = userInput; // won't work as unknown can't be assigned to string
-//TS detects this check and allows assignment of the unknown type to string
 
+//TS detects this check and allows assignment of the unknown type to string
 if (typeof userInput === "string") {
   userName === userInput;
 }
@@ -380,6 +380,98 @@ const generateError = (message: string, code: number): never => {
 ---
 
 ## TS compiler & configuration
+
+`-`
+
+### Watch/Compile whole project
+
+- initialize TS project with `tsc --init`
+- this creates `tsconfig.json` file containing TS compilator configuration
+- now you can use `tsc` or `tsc --watch` to compile whole project
+
+`-`
+
+### Including & Excluding files
+
+- in `tsconfig.json` you can specify files to be included or exluded in the compilation
+- `exlude` - paths in this list won't be compiled
+- `include` - only paths specified here will be compiled, can be filtered with exclude
+- `exclude` or `include` parameters in the configuration files takes a list of
+  - files to be included/excluded
+  - folder to be included/exluded
+  - supports wildcard globbing
+
+`-`
+
+- `files` - you can specify concere files to compile, no paths or globbing here
+
+`-`
+
+### Compiler options
+
+- `target` - which version of JS the TS code should be compiled into
+- `module` - specifies how modules are generated (will be dealt with in own section)
+- `lib`
+  - specify which default objects and features TS knows
+  - defaults to target `es` and all `DOM` APIs for web browser
+
+`-`
+
+- `allowJS` - allows JS files to be compiled by TS
+- `checkJS` - checks JS files for errors, but won't compile
+- `jsx` - specifies how to compile JSX for React
+
+`-`
+
+when building a lib to be used by others, you can include type definitions with it:
+
+- `declaration` - creates `.d.ts` files
+- `declarationMap` - generates source maps for `.d.ts` files
+
+`-`
+
+- `sourceMap` - generates source map for debugging purposes
+
+`-`
+
+- `outFile`
+  - concatenate and emit output to single file
+  - tricky to use properly, see [here](https://basarat.gitbook.io/typescript/main-1/outfile)
+- `rootDir` - where the root of the source files is, typically `src`
+- `outDir` - where the compiled output should go, i.e. `dist`
+
+`-`
+
+- `noEmit` - will not produce JS files, but still checks the TS files
+- `noEmitOnError` - will not produce compiled JS files when errors are present
+
+`-`
+
+### Strict checks
+
+- `strict` - sets all strict options on/off
+- `noImplicitAny` - raise error when implicit `any` is present (the type is not specified)
+- `strictNullChecks` - requires checks for null for potentially nullable values
+
+`-`
+
+- `strictFunctionTypes` - cheks for function types while inheriting
+- `strictBindCallApply` - strict check bind, call, apply functions assigments
+- `strictPropertyInitialization` - Ensure non-undefined class properties are initialized in the constructor
+
+`-`
+
+- `noImplicitThis` - `this` impliead as `any` will cause error
+- `alwaysStrict` - generated JS files will always have "strict mode" (`"use strict"`)
+
+`-`
+
+### Additional checks
+
+- `noUnusedLocals` - reports unused local variables
+- `noUnusedParameters` - reports unused function parameters
+- `noImplicitReturns` - check if all code paths in function returns a value
+- `noFallthroughCasesInSwitch` - checks missing `break` statements in `switch`
 
 ---
 
