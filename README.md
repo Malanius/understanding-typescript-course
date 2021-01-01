@@ -588,7 +588,32 @@ class Department {
 ### Inheritance
 
 - JS & TS allows single parent inheritance
-- Constructor works just as same as Java's constructors, with super keyword and required to be called first
+- `super()` constructor is required to be called first before assigning any other fields (done automatically with shorthand constructor)
+- overriding methods of base implementation is possible
+- `protected` access odifier is required on fields that should be acessible from childs
+
+`-`
+
+```typescript
+class Department {
+  protected employees: string [] = [];
+  constructor(protected readonly id: string, private name: string) {}
+  addEmployee(name: string){
+    // logic
+  }
+}
+
+class ITDepartment extends Department {
+  admins: string[];
+  constructor(id: string, admins: string[]) {
+    super(id, "IT"); //has to be called first
+    this.admins = admins;
+  }
+  addEmployee(name: string){
+    // different logic
+  }
+}
+```
 
 `-`
 
