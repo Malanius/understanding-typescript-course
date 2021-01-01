@@ -678,6 +678,24 @@ class AccountingDepartment extends Department {
 
 ### Singletons & private constructors
 
+- useful when excatly one instance of the class should exist in the app
+
+```typescript
+class AccountingDepartment extends Department {
+  private static instance: AccountingDepartment;
+  private constructor(id: string, private reports: string[]) {
+    super(id, "Accounting");
+    this.lastReport = reports[0];
+  }
+  static getInstance() {
+    if (!this.instance) {
+      this.instance = new AccountingDepartment("acc", []);
+    }
+    return this.instance;
+  }
+}
+```
+
 ---
 
 ## Interfaces
