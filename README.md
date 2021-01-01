@@ -639,6 +639,31 @@ acc.latestReport = "value";
 
 `-`
 
+### Static properties and methods
+
+- methods and properties not accessed on instance of the class but the class itself
+- example is `Math` class in JS, ie. `Math.PI`, `Math.pow()`
+
+```typescript
+class Department(){
+  static year = 2021;
+  constructor(private readonly id: string, private name: string){}
+  static createEmployee(name: string){
+    return {name: name};
+  }
+}
+const empl = Department.createEmployee('Name');
+console.log(Department.year);
+```
+
+`-`
+
+### Abstract classes
+
+`-`
+
+### Singletons & private constructors
+
 ---
 
 ## Interfaces
