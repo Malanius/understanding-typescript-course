@@ -596,9 +596,9 @@ class Department {
 
 ```typescript
 class Department {
-  protected employees: string [] = [];
+  protected employees: string[] = [];
   constructor(protected readonly id: string, private name: string) {}
-  addEmployee(name: string){
+  addEmployee(name: string) {
     // logic
   }
 }
@@ -609,10 +609,32 @@ class ITDepartment extends Department {
     super(id, "IT"); //has to be called first
     this.admins = admins;
   }
-  addEmployee(name: string){
+  addEmployee(name: string) {
     // different logic
   }
 }
+```
+
+`-`
+
+### Getters & setters
+
+- Defined with get/set keywords
+- defined as a function, but accessed as property
+
+```typescript
+class AccountingDepartment extends Department {
+  private lastReport: string;
+  get latestReport() {
+    return this.lastReport;
+  }
+  set latestReport(string value){
+    this.lastReport = value;
+  }
+}
+const acc = new AccountingDepartment();
+console.log(acc.latestReport);
+acc.latestReport = "value";
 ```
 
 `-`
