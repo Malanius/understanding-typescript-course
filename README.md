@@ -660,6 +660,20 @@ console.log(Department.year);
 
 ### Abstract classes
 
+- abstract classes and methods provide a way to enforce classes inheriting from the base class to have implemented common methods with their own implementation
+
+```typescript
+abstract class Department {
+  constructor(private readonly id: string, private name: string) {}
+  abstract describe(this: Department): void; //no {}, with return type specified
+}
+class AccountingDepartment extends Department {
+  describe() {
+    //logic
+  }
+}
+```
+
 `-`
 
 ### Singletons & private constructors
