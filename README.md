@@ -536,10 +536,61 @@ when building a lib to be used by others, you can include type definitions with 
 
 `-`
 
+### Access modifiers
+
 - TS provides `private`, `protected` and `public` (default) access modifiers & checks during compilation (in JS, all is always public)
-- TS also provides `readonly` modifiers - specifies that the value is not modifiable asfter assigment
+- TS also provides `readonly` modifiers - specifies that the value is not modifiable after assigment
+
+```typescript
+class Department {
+  public readonly name: string;
+  private employees: string[] = [];
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+```
+
+`-`
+
+### Shorthand constructor
+
 - TS allows shorthand syntax for constructor initialization - fields can be specified just in constructor and are created and initialzied automatically
-- class methods can have `this` parameter to check if called from the instance object
+
+```typescript
+class Department {
+  //   private id: string;
+  //   private name: string;
+
+  // Shorthand init
+  constructor(private id: string, private name: string) {}
+}
+```
+
+`-`
+
+### `this` as method parameter
+
+- class methods can have `this` parameter to check if called from the instance of the object
+
+```typescript
+class Department {
+  constructor(private id: string, private name: string) {}
+  //this is dummy parameter for TS
+  describe(this: Department) {
+    console.log(`Department (${this.id}): ${this.name}`);
+  }
+}
+```
+
+`-`
+
+### Inheritance
+
+- JS & TS allows single parent inheritance
+- Constructor works just as same as Java's constructors, with super keyword and required to be called first
+
+`-`
 
 ---
 
